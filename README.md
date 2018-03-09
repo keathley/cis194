@@ -2,7 +2,7 @@
 
 Homework solutions for UPenn's CIS 194:
 
-http://acruikshank.github.io/cis194/lectures.html
+https://keathley.github.io/cis194/lectures.html
 
 ## Installation
 
