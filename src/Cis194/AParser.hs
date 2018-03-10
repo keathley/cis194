@@ -1,4 +1,4 @@
-module Cis194.Hw.AParser where
+module Cis194.AParser where
 
 import           Control.Applicative
 import           Data.Char
@@ -56,7 +56,8 @@ posInt = Parser f
 -- Ex. 1 - implement a Functor instance for Parser
 --
 -- You may find it useful to implement:
--- first :: (a -> b) -> (a,c) -> (b,c)
+first :: (a -> b) -> (a,c) -> (b,c)
+first = undefined
 
 
 -- Ex. 2 - implement an Applicative instance for Parser
@@ -74,12 +75,14 @@ posInt = Parser f
 --   abParser :: Parser (Char, Char)
 --
 -- which expects to see the characters ’a’ and ’b’ and returns them as a pair
+abParser = undefined
 
 -- Ex. 3b - Create a parser:
 --
 --   abParser_ :: Parser ()
 --
 -- which acts in the same way as abParser but returns () instead of 'a' and 'b'
+abParser_ = undefined
 
 -- Ex. 3c - Create a parser:
 --
@@ -87,6 +90,7 @@ posInt = Parser f
 --
 -- which reads two integer values separated by a space and returns the integer 
 -- values in a list. You should use the provided posInt to parse the integer values.
+intPair = undefined
 
 
 -- Ex. 4 - Write an Alternative instance for Parser
@@ -105,9 +109,5 @@ posInt = Parser f
 --  intOrUppercase :: Parser ()
 -- 
 -- which parses either an integer value or an uppercase character, and fails otherwise.
-
-
-
-
-
+intOrUppercase = undefined
 

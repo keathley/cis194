@@ -1,7 +1,7 @@
-module Cis194.Hw.GolfSpec (main, spec) where
+module Cis194.GolfSpec (main, spec) where
 
 import Test.Hspec
-import Cis194.Hw.Golf
+import Cis194.Golf
 
 main :: IO ()
 main = hspec spec

@@ -1,8 +1,8 @@
-module Cis194.Hw.LogAnalysisSpec (main, spec) where
+module Cis194.LogAnalysisSpec (main, spec) where
 
 import Test.Hspec
-import Cis194.Hw.Log
-import Cis194.Hw.LogAnalysis
+import Cis194.Log
+import Cis194.LogAnalysis
 
 main :: IO ()
 main = hspec spec

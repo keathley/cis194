@@ -1,4 +1,4 @@
-module Cis194.Hw.Fibonacci where
+module Cis194.Fibonacci where
 
 ----------
 -- Ex 1 --

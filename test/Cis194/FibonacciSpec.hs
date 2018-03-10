@@ -1,7 +1,7 @@
-module Cis194.Hw.FibonacciSpec (main, spec) where
+module Cis194.FibonacciSpec (main, spec) where
 
 import Test.Hspec
-import Cis194.Hw.Fibonacci
+import Cis194.Fibonacci
 
 main :: IO ()
 main = hspec spec

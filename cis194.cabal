@@ -1,35 +1,86 @@
-Name:                   cis194
-Version:                0.0.0
-Author:                 James Cooper <james@bitmechanic.com>
-Maintainer:             James Cooper <james@bitmechanic.com>
-License:                BSD3
-License-File:           LICENSE
--- Synopsis:               
--- Description:            
-Cabal-Version:          >= 1.10
-Build-Type:             Simple
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 4e719f8963ac4cfc5a737797cfc948b5a5b532a32036ff9aabf5ec693f13cec5
 
-Library
-  Default-Language:     Haskell2010
-  HS-Source-Dirs:       src
-  GHC-Options:          -Wall
-  Exposed-Modules:      Cis194.Hw.Week1
-  Other-Modules:        
-  Build-Depends:        base >= 4 && < 5
-                      , containers
+name:           cis194
+version:        0.1.0.0
+description:    Please see the README on Github at <https://github.com/keathley/cis194#readme>
+homepage:       https://github.com/keathley/cis194#readme
+bug-reports:    https://github.com/keathley/cis194/issues
+author:         Chris Keathley
+maintainer:     c@keathley.io
+copyright:      2018 Chris Keathley
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
 
-Test-Suite spec
-  Type:                 exitcode-stdio-1.0
-  Default-Language:     Haskell2010
-  Hs-Source-Dirs:       src
-                      , test
-  Ghc-Options:          -Wall
-  Main-Is:              Spec.hs
-  Build-Depends:        base
-                      , hspec
-                      , containers
-                      , QuickCheck
+extra-source-files:
+    README.md
 
-Source-Repository head
-  Type:                 git
---  Location:             
+source-repository head
+  type: git
+  location: https://github.com/keathley/cis194
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , containers
+    , hspec
+    , mtl
+  exposed-modules:
+      Cis194.AParser
+      Cis194.Buffer
+      Cis194.Calc
+      Cis194.Editor
+      Cis194.Employee
+      Cis194.ExprT
+      Cis194.Fibonacci
+      Cis194.Golf
+      Cis194.Log
+      Cis194.LogAnalysis
+      Cis194.Parser
+      Cis194.Party
+      Cis194.Scrabble
+      Cis194.SExpr
+      Cis194.Sized
+      Cis194.StackVM
+      Cis194.StringBufEditor
+      Cis194.StringBuffer
+      Cis194.Week1
+      Cis194.Week4
+      Lib
+  other-modules:
+      Paths_cis194
+  default-language: Haskell2010
+
+test-suite cis194-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , cis194
+    , containers
+    , hspec
+    , mtl
+  other-modules:
+      Cis194.AcceptHanoi
+      Cis194.AParserSpec
+      Cis194.CalcSpec
+      Cis194.FibonacciSpec
+      Cis194.GolfSpec
+      Cis194.LogAnalysisSpec
+      Cis194.SExprSpec
+      Cis194.Week1Spec
+      Cis194.Week4Spec
+      Paths_cis194
+  default-language: Haskell2010

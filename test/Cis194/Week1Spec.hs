@@ -1,9 +1,9 @@
-module Cis194.Hw.Week1Spec (main, spec) where
+module Cis194.Week1Spec (main, spec) where
 
 import Test.Hspec
 import Test.QuickCheck
-import Cis194.Hw.Week1
-{-import Cis194.Hw.AcceptHanoi-}
+import Cis194.Week1
+{-import Cis194.AcceptHanoi-}
 
 main :: IO ()
 main = hspec spec

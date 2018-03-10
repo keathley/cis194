@@ -1,4 +1,4 @@
-module Cis194.Hw.StackVM (StackVal(..), StackExp(..), Stack, Program, stackVM) where
+module Cis194.StackVM (StackVal(..), StackExp(..), Stack, Program, stackVM) where
 
 -- Values that may appear in the stack. Such a value will also be
 -- returned by the stackVM program execution function.

@@ -1,7 +1,7 @@
-module Cis194.Hw.Week4Spec (main, spec) where
+module Cis194.Week4Spec (main, spec) where
 
 import Test.Hspec
-import Cis194.Hw.Week4
+import Cis194.Week4
 import Test.QuickCheck
 
 main :: IO ()

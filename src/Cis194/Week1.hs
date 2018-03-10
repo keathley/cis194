@@ -1,4 +1,4 @@
-module Cis194.Hw.Week1 where
+module Cis194.Week1 where
 
 -------------
 -- Ex 1-4  --

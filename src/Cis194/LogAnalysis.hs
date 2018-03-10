@@ -1,9 +1,9 @@
 {-# OPTIONS_GHC -Wall #-}
-module Cis194.Hw.LogAnalysis where
+module Cis194.LogAnalysis where
 
 -- in ghci, you may need to specify an additional include path:
--- Prelude> :set -isrc/Cis194/Hw
-import  Cis194.Hw.Log
+-- Prelude> :set -isrc/Cis194
+import  Cis194.Log
 
 parseMessage :: String -> LogMessage
 parseMessage s = Unknown s

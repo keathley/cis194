@@ -1,6 +1,6 @@
-module Cis194.Hw.AcceptHanoi where
+module Cis194.AcceptHanoi where
 
-import Cis194.Hw.Week1
+import Cis194.Week1
 
 data HanoiState = HanoiState3 [Int] [Int] [Int]
                 | HanoiState4 [Int] [Int] [Int] [Int]

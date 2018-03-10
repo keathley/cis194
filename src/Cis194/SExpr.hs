@@ -2,9 +2,9 @@
    due Monday, 8 April
 -}
 
-module Cis194.Hw.SExpr where
+module Cis194.SExpr where
 
-import Cis194.Hw.AParser
+import Cis194.AParser
 import Control.Applicative
 import Data.Char
 
@@ -16,14 +16,14 @@ import Data.Char
 -- and then parse zero or more occurrences of p.
 
 oneOrMore :: Parser a -> Parser [a]
-oneOrMore = some
+oneOrMore = undefined
 {-oneOrMore p = (:) <$> p <*> zeroOrMore p-}
 
 -- To parse zero or more occurrences of p, try parsing one
 -- or more; if that fails, return the empty list.
 
 zeroOrMore :: Parser a -> Parser [a]
-zeroOrMore = many
+zeroOrMore = undefined
 {-zeroOrMore p = oneOrMore p <|> pure []-}
 
 ------------------------------------------------------------
@@ -34,7 +34,7 @@ zeroOrMore = many
 -- more whitespace characters.
 
 spaces :: Parser String
-spaces = many $ char ' '
+spaces = undefined
 
 -- Next, ident should parse an identifier, which for our
 -- purposes will be an alphabetic character (use isAlpha)
@@ -42,7 +42,7 @@ spaces = many $ char ' '
 -- isAlphaNum).
 
 ident :: Parser String
-ident = (:) <$> (satisfy isAlpha) <*> many (satisfy isAlphaNum)
+ident = undefined
 
 ------------------------------------------------------------
 --  3. Parsing S-expressions

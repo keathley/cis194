@@ -1,4 +1,4 @@
-module Cis194.Hw.Week4 where
+module Cis194.Week4 where
 
 fun1 :: [Integer] -> Integer
 fun1 [] = 1
