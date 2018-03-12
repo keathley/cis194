@@ -8,6 +8,8 @@ https://keathley.github.io/cis194/lectures.html
 
 On a mac:
 
+    # install asdf: https://github.com/asdf-vm/asdf
+    asdf plugin-add haskell
     asdf install haskell 8.0.2
     cd cis194
     stack setup
