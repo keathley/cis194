@@ -15,6 +15,13 @@ On a mac:
     stack setup
     stack build
 
+Or through nix:
+
+    Install nix following https://nixos.org/nix/download.html
+    nix-shell
+    stack setup
+    stack build
+
 ## GHCI
 
 Through most of this course ghci is going to be your best friend. You can start
