@@ -9,7 +9,9 @@ toDigits x = reverse (toDigitsRev x)
 
 toDigitsRev :: Integer -> [Integer]
 toDigitsRev 0 = []
-toDigitsRev x = x `mod` 10 : toDigitsRev (x `div` 10)
+toDigitsRev x = if x < 0
+                then []
+                else x `mod` 10 : toDigitsRev (x `div` 10)
 
 doubleEveryOther :: [Integer] -> [Integer]
 doubleEveryOther xs = reverse (doubleEveryOtherRev (reverse xs))
@@ -35,11 +37,13 @@ type Peg = String
 type Move = (Peg, Peg)
 
 hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
+hanoi 0 _ _ _ = []
 hanoi 1 from to _temp = [(from, to)]
 hanoi n from to temp = (hanoi (n-1) from temp to) ++ (hanoi 1 from to temp) ++ (hanoi (n-1) temp to from)
 
 -- hanoi4 using Frame-Stewart algorithm
 hanoi4 :: Integer -> Peg -> Peg -> Peg -> Peg -> [Move]
+hanoi4 0 _ _ _ _ = []
 hanoi4 1 from to _temp1 _temp2 = [(from, to)]
 hanoi4 n from to temp1 temp2 = hanoi4k n (bestk n) from to temp1 temp2
 
