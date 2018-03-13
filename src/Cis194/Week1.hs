@@ -5,19 +5,27 @@ module Cis194.Week1 where
 -------------
 
 toDigits :: Integer -> [Integer]
-toDigits x = [x]
+toDigits x = reverse (toDigitsRev x)
 
 toDigitsRev :: Integer -> [Integer]
-toDigitsRev x = [x]
+toDigitsRev 0 = []
+toDigitsRev x = x `mod` 10 : toDigitsRev (x `div` 10)
 
 doubleEveryOther :: [Integer] -> [Integer]
-doubleEveryOther xs = xs
+doubleEveryOther xs = reverse (doubleEveryOtherRev (reverse xs))
+
+doubleEveryOtherRev :: [Integer] -> [Integer]
+doubleEveryOtherRev [] = []
+doubleEveryOtherRev [x] = [x]
+doubleEveryOtherRev (x : y : zs) = x : y*2 : doubleEveryOtherRev zs
+
 
 sumDigits :: [Integer] -> Integer
-sumDigits _ = 0
+sumDigits xs = sum (xs >>= toDigits)
 
 validate :: Integer -> Bool
-validate _ = False
+validate x = checksum `mod` 10 == 0
+  where checksum = sumDigits (doubleEveryOther (toDigits x))
 
 ---------------------
 -- Towers of Hanoi --
