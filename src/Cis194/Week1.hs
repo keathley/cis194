@@ -35,7 +35,16 @@ type Peg = String
 type Move = (Peg, Peg)
 
 hanoi :: Integer -> Peg -> Peg -> Peg -> [Move]
-hanoi _ _ _ _ = []
+hanoi 1 from to _temp = [(from, to)]
+hanoi n from to temp = (hanoi (n-1) from temp to) ++ (hanoi 1 from to temp) ++ (hanoi (n-1) temp to from)
 
+-- hanoi4 using Frame-Stewart algorithm
 hanoi4 :: Integer -> Peg -> Peg -> Peg -> Peg -> [Move]
-hanoi4 _ _ _ _ _ = []
+hanoi4 1 from to _temp1 _temp2 = [(from, to)]
+hanoi4 n from to temp1 temp2 = hanoi4k n (bestk n) from to temp1 temp2
+
+bestk :: Integer -> Integer
+bestk n = n - round(sqrt(fromIntegral(2*n+1))) + 1
+
+hanoi4k :: Integer -> Integer -> Peg -> Peg -> Peg -> Peg -> [Move]
+hanoi4k n k from to temp1 temp2 = (hanoi4 k from temp1 to temp2) ++ (hanoi (n-k) from to temp2) ++ (hanoi4 k temp1 to from temp2)
