@@ -3,7 +3,7 @@ module Cis194.Week1Spec (main, spec) where
 import Test.Hspec
 import Test.QuickCheck
 import Cis194.Week1
-{-import Cis194.AcceptHanoi-}
+import Cis194.AcceptHanoi
 
 main :: IO ()
 main = hspec spec
@@ -65,16 +65,15 @@ spec = do
     it "should solve for 1 disc" $ do
       hanoi 1 "a" "b" "c" `shouldBe` [("a", "b")]
 
-    {-it "should solve for 2 discs" $ do-}
-      {-(acceptHanoi3 hanoi 2) `shouldBe` Just (HanoiState3 [] [1..2] [])-}
+    it "should solve for 2 discs" $ do
+      (acceptHanoi3 hanoi 2) `shouldBe` Just (HanoiState3 [] [1..2] [])
 
-    {-it "should solve for 5 discs" $ do-}
-      {-(acceptHanoi3 hanoi 5) `shouldBe` Just (HanoiState3 [] [1..5] [])-}
+    it "should solve for 5 discs" $ do
+      (acceptHanoi3 hanoi 5) `shouldBe` Just (HanoiState3 [] [1..5] [])
 
-    {-it "should solve for 10 discs" $ do-}
-      {-(acceptHanoi3 hanoi 10) `shouldBe` Just (HanoiState3 [] [1..10] [])-}
+    it "should solve for 10 discs" $ do
+      (acceptHanoi3 hanoi 10) `shouldBe` Just (HanoiState3 [] [1..10] [])
 
-  {- This is an optional assigment
   describe "hanoi4" $ do
     it "should return an empty list for zero discs" $ do
       hanoi4 0 "a" "b" "c" "d" `shouldBe` []
@@ -93,4 +92,3 @@ spec = do
 
     it "should find an optimal solution for 15 disks" $ do
       length (hanoi4 15 "a" "b" "c" "d") `shouldBe` 129
-  -}
