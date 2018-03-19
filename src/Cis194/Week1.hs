@@ -39,4 +39,5 @@ hanoi 0 _ _ _ = []
 hanoi disks a b c = (hanoi (disks - 1) a c b) ++ [(a, b)] ++ (hanoi (disks - 1) c b a)
 
 hanoi4 :: Integer -> Peg -> Peg -> Peg -> Peg -> [Move]
-hanoi4 _ _ _ _ _ = []
+hanoi4 0 _ _ _ _ = []
+hanoi4 1 a b _ _ = [(a, b)]
